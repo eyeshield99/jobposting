@@ -1,0 +1,13 @@
+
+
+{% block content %}
+  <h1>Job Listings</h1>
+  <ul>
+    {% for job in jobs %}
+      <li>
+        <a href="{% url 'job-detail' job.id %}">{{ job.title }}</a> - {{ job.location }} - {{ job.salary }}
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'job-post' %}">Add Job
+{% endblock %}
